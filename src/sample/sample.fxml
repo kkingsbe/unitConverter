@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="806.0" prefWidth="1090.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="806.0" stroke="BLACK" strokeType="INSIDE" width="1090.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#845ec2" />
+                        <Stop color="#d65db1" offset="0.20500059248726152" />
+                        <Stop color="#ff6f91" offset="0.4109096654421929" />
+                        <Stop color="#ff9671" offset="0.6150807757633211" />
+                        <Stop color="#ffc75f" offset="0.8119050440415526" />
+                        <Stop color="#f9f871" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <TextField fx:id="startingValueLabel" alignment="CENTER" layoutX="53.0" layoutY="380.0" onAction="#convertUnit" prefHeight="56.0" prefWidth="183.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="MyriadPro-Regular" size="35.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="startingUnitBox" editable="true" layoutX="303.0" layoutY="381.0" onAction="#convertUnit" prefHeight="63.0" prefWidth="170.0" promptText="Choose Unit" />
+            <TextField fx:id="finalValueLabel" alignment="CENTER" layoutX="863.0" layoutY="375.0" onAction="#convertUnit" prefHeight="56.0" prefWidth="183.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="finalUnitBox" editable="true" layoutX="622.0" layoutY="381.0" onAction="#convertUnit" prefHeight="63.0" prefWidth="170.0" promptText="Choose Unit" />
+            <Separator layoutX="542.0" layoutY="1.0" orientation="VERTICAL" prefHeight="806.0" prefWidth="16.0" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
