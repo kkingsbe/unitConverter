@@ -15,5 +15,6 @@ Kilometer,1000 Meter;
 Inch,0.0254 Meter;
 Foot,0.3048 Meter/12 Inch;
 Mile,1609.34 Meter/1.60934 Kilometer;
+Sheet_of_Paper,4.5 Gram;
 Mole_Iron,55.845 Gram;
 Mole_Cesium,133 Gram;
