@@ -1,6 +1,8 @@
-Milligrams,1 Gram;
+Milligrams,0.001 Gram;
 Grams,1 Gram;
-Kilograms,1000 Gram;
+Kilograms,1000 Gram/5 Human;
 Metric Tons,1000000 Gram;
-Ounces,28.3495 Gram;
+Ounces,28.3495 Gram/20 Human;
 Pounds,453.592 Gram;
+Cow,725747.8 Gram;
+Human,69853.2 Gram/1 Human;
