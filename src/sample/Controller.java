@@ -18,6 +18,7 @@ public class Controller {
     public ComboBox startingUnitBox;
     public ComboBox finalUnitBox;
     public Button applyButton;
+    public ComboBox intermediateUnitBox;
 
     public void initialize() {
         populateComboBoxes();
@@ -26,15 +27,22 @@ public class Controller {
     private void populateComboBoxes() {
         try {
             String units[] = Files.readAllLines(Paths.get("src/sample/Units")).toString().replace(", ","").replace("]","").replace("[","").split(";");
-
+            List startingUnitBoxList = new ArrayList();
+            List finalUnitBoxList = new ArrayList();
 
             for(int row = 0; row < units.length; row++)
             {
                 System.out.println(units[row]);
                 units[row] = units[row].split(",")[0];
-                startingUnitBox.getItems().addAll(units[row]);
-                finalUnitBox.getItems().addAll(units[row]);
+                startingUnitBoxList.add(units[row]);
+                finalUnitBoxList.add(units[row]);
+
             }
+
+            java.util.Collections.sort(startingUnitBoxList);
+            java.util.Collections.sort(finalUnitBoxList);
+            startingUnitBox.getItems().addAll(startingUnitBoxList);
+            finalUnitBox.getItems().addAll(finalUnitBoxList);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -56,9 +64,12 @@ public class Controller {
                 List startingUnitArray = createUnitArray(startingUnit);
                 List finalUnitArray = createUnitArray(finalUnit);
                 List commonUnits = findCommonUnits(startingUnitArray,finalUnitArray);
+
+                intermediateUnitBox.getItems().addAll(commonUnits);
+
                 System.out.println("Units in common: " + commonUnits);
                 System.out.println(startingUnitArray);
-                finalValue = convertToFinalUnit(startingUnit,startingValue,startingUnitArray,finalUnit,finalUnitArray,commonUnits);
+                finalValue = convertToFinalUnit(startingValue,startingUnitArray,finalUnitArray,intermediateUnitBox.getValue().toString());
                 finalValueLabel.setText(Double.toString(finalValue));
             }
         } catch (java.lang.NullPointerException e){
@@ -66,19 +77,19 @@ public class Controller {
         }
     }
 
-    private double convertToFinalUnit(String startingUnit, double startingValue, List startingUnitArray, String finalUnit, List finalUnitArray, List commonUnits) {
+    private double convertToFinalUnit(double startingValue, List startingUnitArray, List finalUnitArray, String commonUnit) {
         double conversionValue1 = 0;
         double conversionValue2 = 0;
         for (int x = 0; x <= startingUnitArray.size(); x++){
             try {
-                if (startingUnitArray.get(x).toString().split(" ")[1].equals(commonUnits.get(0))) {
+                if (startingUnitArray.get(x).toString().split(" ")[1].equals(commonUnit)) {
                     conversionValue1 = Double.parseDouble(startingUnitArray.get(x).toString().split(" ")[0]);
                 }
             } catch (java.lang.IndexOutOfBoundsException e) {}
         }
         for (int x = 0; x <= finalUnitArray.size(); x++){
             try {
-                if (finalUnitArray.get(x).toString().split(" ")[1].equals(commonUnits.get(0))) {
+                if (finalUnitArray.get(x).toString().split(" ")[1].equals(commonUnit)) {
                     conversionValue2 = Double.parseDouble(finalUnitArray.get(x).toString().split(" ")[0]);
                 }
             } catch (java.lang.IndexOutOfBoundsException e) {}

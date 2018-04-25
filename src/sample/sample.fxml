@@ -58,6 +58,7 @@
                   <Font name="MyriadPro-Regular" size="35.0" />
                </font>
             </Label>
+            <ComboBox fx:id="intermediateUnitBox" editable="true" layoutX="622.0" layoutY="470.0" onAction="#convertUnit" prefHeight="31.0" prefWidth="170.0" promptText="Intermediate Unit" />
          </children>
       </Pane>
    </children>
