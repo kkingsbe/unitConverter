@@ -1,10 +1,10 @@
-Milligrams,0.001 Gram;
-Grams,1 Gram;
+Milligrams,0.001 Gram,;
+Grams,1 Gram,.001 Liter/.001 Dollar;
 Kilograms,1000 Gram/5 Human;
 Metric Tons,1000000 Gram;
 Ounces,28.3495 Gram/20 Human;
 Pounds,453.592 Gram;
-Cow,725747.8 Gram;
+Cow,725747.8 Gram/2150 Dollar;
 Human,69853.2 Gram/1 Human;
 Milliliter,0.001 Liter;
-Liter,1 Liter,1000 Gram;
+Liter,1 Liter/1000 Gram/1 Dollar;
