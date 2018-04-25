@@ -10,3 +10,4 @@ Milliliter,0.001 Liter;
 Liter_Water,1 Liter/1000 Gram/1 Dollar;
 Mole_Iron,55.845 Gram;
 Empire_State_Building,331000000000 Gram/1047723323.9 Liter/1890000000 Dollar;
+Centimeter,0.01 Meter;
